@@ -135,10 +135,10 @@ class ITakeMed{
     counter(number){
         if (Number(this.date.getHours()) >= Number(localStorage.getItem(`hourCounter${number}`))) {
             if (this.date.getDate() === localStorage.getItem(`day${number}`)) {
-                this.noActive();
+                this.noActive(number);
             } else if (this.date.getDate() !== localStorage.getItem(`day${number}`)){
                 if(Number(this.date.getHours()) < localStorage.getItem(`hour${number}`)){
-                    this.noActive();
+                    this.noActive(number);
                 }
             }
         }
